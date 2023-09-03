@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./layouts/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -12,6 +13,7 @@ const config: Config = {
         brand: {
           main: "#2436D8 ",
           secondary: "#1E30CE",
+          tartary: "#3447F2 ",
         },
         gray: {
           main: "#A7A7A7",
