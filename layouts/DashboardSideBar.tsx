@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -25,12 +26,12 @@ const DashboardSideBar = () => {
     },
     {
       Name: "Security Tokens",
-      Route: "/dashboard/securitytokens",
+      Route: "#",
       icon: <IoShieldCheckmarkOutline className={`text-[24px]`} />,
     },
     {
       Name: "Token Exchange",
-      Route: "/dasboard/tokenexchange",
+      Route: "#",
       icon: <BsBarChart className={`text-[24px]`} />,
     },
 
