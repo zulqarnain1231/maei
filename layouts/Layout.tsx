@@ -22,7 +22,26 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
       {showSideBar && (
         <AppShell
           className="h-screen"
-          navbar={<SideBar />}
+          navbar={
+            <Navbar
+              className="bg-black min-h-screen"
+              width={{ base: 200 }}
+              height={500}
+            >
+              <div className="w-full h-full flex flex-col items-center justify-between py-[40px] px-[15px]">
+                <div className="w-full h-full flex flex-col items-center justify-start gap-6">
+                  <div className="relative h-[50px] w-[102px]">
+                    <Image
+                      src={"/Logo.png"}
+                      className="h-full w-full object-cover"
+                      alt=""
+                      fill
+                    />
+                  </div>
+                </div>
+              </div>
+            </Navbar>
+          }
           //   header={
           //     <Header height={60} p="xs">
           //       <div className="w-full h-full flex items-center justify-center">
