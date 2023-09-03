@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Drawer } from "@mantine/core";
 import { BiMenuAltLeft } from "react-icons/bi";
-import { GrHomeRounded } from "react-icons/gr";
-import { IoShieldCheckmarkOutline, IoHomeOutline } from "react-icons/io5";
+import { MdLogout } from "react-icons/md";
+import { IoShieldCheckmarkOutline, IoSettingsOutline } from "react-icons/io5";
 import { BsBarChart } from "react-icons/bs";
-import * as Icons from "../constants/Svg/Icons";
+import { GoHome } from "react-icons/go";
+import { RiExchangeDollarFill } from "react-icons/ri";
+
 const DashboardSideBar = () => {
   const Router = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
@@ -19,7 +21,7 @@ const DashboardSideBar = () => {
     {
       Name: "Home",
       Route: "/dashboard",
-      icon: <IoHomeOutline className={`text-[24px]`} />,
+      icon: <GoHome className={`text-[26px]`} />,
     },
     {
       Name: "Security Tokens",
@@ -35,21 +37,14 @@ const DashboardSideBar = () => {
     {
       Name: "Transactions",
       Route: "/dashboard/transactions",
-      icon: (
-        <Icons.Transactions
-          ClassName={`text-[24px]`}
-          fill="none"
-          stroke=""
-          color="black"
-        />
-      ),
+      icon: <RiExchangeDollarFill className="text-[26px]" />,
     },
   ];
 
   return (
     <div className="bg-white shadow-xl font-manrope">
       <div className="w-full md:h-full flex justify-between items-center md:flex-col md:p-5 p-4">
-        <div className="md:flex flex-col hidden justify-between items-center">
+        <div className="md:flex flex-col hidden justify-start items-center">
           {/* Logo */}
           <Link href={"/"} className="relative w-[102px] h-[50px] ">
             <Image src={"/Logo.png"} alt="" fill className="object-contain" />
@@ -75,7 +70,30 @@ const DashboardSideBar = () => {
             })}
           </div>
         </div>
-
+        <div className="w-full flex flex-col items-center justify-start gap-2">
+          <Link
+            href={"#"}
+            className={`w-[170px] px-3 py-4 flex items-center justify-start gap-2 group  text-sm font-medium rounded-xl ${
+              "#" === Router.pathname
+                ? "text-white bg-gradient-to-r from-brand-tartary to-brand-secondary"
+                : " hover:text-white hover:bg-gradient-to-r from-brand-tartary to-brand-secondary"
+            }`}
+          >
+            <IoSettingsOutline className="text-[24px]" />
+            Setting
+          </Link>
+          <Link
+            href={"#"}
+            className={`w-[170px] px-3 py-4 flex items-center justify-start gap-2 group  text-sm font-medium rounded-xl ${
+              "#" === Router.pathname
+                ? "text-white bg-gradient-to-r from-brand-tartary to-brand-secondary"
+                : " hover:text-white hover:bg-gradient-to-r from-brand-tartary to-brand-secondary"
+            }`}
+          >
+            <MdLogout className="text-[24px]" />
+            Logout
+          </Link>
+        </div>
         {/* For Phone */}
         {/* Logo */}
         <button className="md:hidden block" onClick={toggleDrawer}>
