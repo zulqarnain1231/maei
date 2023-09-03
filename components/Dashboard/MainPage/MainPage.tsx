@@ -1,5 +1,6 @@
 import React from "react";
 import WalletCard from "./WalletCard";
+import SecurityCard from "./SecurityCard";
 
 const MainPage = () => {
   return (
@@ -8,6 +9,7 @@ const MainPage = () => {
         {/* left side */}
         <aside className="w-full h-full flex flex-col items-center justify-start gap-6">
           <WalletCard />
+          <SecurityCard />
         </aside>
       </div>
     </div>

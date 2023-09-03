@@ -13,6 +13,9 @@ const config: Config = {
           main: "#2436D8 ",
           secondary: "#1E30CE",
         },
+        gray: {
+          main: "#A7A7A7",
+        },
       },
       fontFamily: {
         manrope: ["Manrope", "sans-serif"],
