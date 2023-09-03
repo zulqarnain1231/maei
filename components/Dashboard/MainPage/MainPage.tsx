@@ -1,10 +1,44 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import WalletCard from "./WalletCard";
 import SecurityCard from "./SecurityCard";
 import { Table } from "@mantine/core";
 import { Select } from "@mantine/core";
 import { FiChevronDown } from "react-icons/fi";
+import Image from "next/image";
+import MantineTable from "@/components/Shared/MantineTable";
 const MainPage = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  const elements = [
+    {
+      no: 1,
+      ticketer: "TESTCORP",
+      logo: "/AssetTicker/Test.png",
+      balance: "$1,890.09",
+    },
+    {
+      no: 2,
+      ticketer: "NEXUSCORP",
+      logo: "/AssetTicker/Nexus.png",
+      balance: "$1,890.09",
+    },
+    {
+      no: 3,
+      ticketer: "PLANET01",
+      logo: "/AssetTicker/Planet.png",
+      balance: "$1,890.09",
+    },
+    {
+      no: 4,
+      ticketer: "SOLARATECH",
+      logo: "/AssetTicker/Solar.png",
+      balance: "$1,890.09",
+    },
+  ];
   return (
     <div className="w-full h-full bg-[url('/DashboardBg.png')] bg-no-repeat bg-cover md:px-10 px-4 py-1">
       <div className="w-full h-full grid lg:grid-cols-[1fr,2fr] lg:gap-4 gap-6">
@@ -14,38 +48,59 @@ const MainPage = () => {
           <SecurityCard />
         </div>
         {/* right side */}
-        <div className="w-full h-full flex flex-col items-center justify-start gap-6 font-manrope">
-          <Table
-            horizontalSpacing="sm"
-            verticalSpacing="sm"
-            className="w-full shadow-xl rounded-xl font-manrope bg-white"
-          >
-            <div className="w-full flex flex-col items-center justify-start gap-4 p-8">
-              <div className="w-full flex items-center justify-between">
-                <p className="text-black text-base font-semibold">My Assets</p>
-                <div className="w-[100px] h-[36px]">
-                  <Select
-                    placeholder="All"
-                    className="font-manrope"
-                    classNames={{
-                      root: "font-manrope",
-                      input: "placeholder:text-black",
-                    }}
-                    rightSection={
-                      <FiChevronDown className="text-[20px] cursor-pointer text-gray-main" />
-                    }
-                    data={[
-                      { value: "react", label: "React" },
-                      { value: "ng", label: "Angular" },
-                      { value: "svelte", label: "Svelte" },
-                      { value: "vue", label: "Vue" },
-                    ]}
-                  />
-                </div>
+        {isClient && (
+          <div className="w-full h-full flex flex-col items-center justify-start gap-6 font-manrope">
+            <MantineTable title="My Assets">
+              <div className="w-full overflow-auto flex flex-col items-center justify-start gap-4">
+                <thead className="w-full min-w-[630px]">
+                  <tr className=" w-full grid grid-cols-[.5fr,1fr,1fr,1fr] place-items-start">
+                    <th className="text-xs text-gray-main font-semibold font-manrope">
+                      No
+                    </th>
+                    <th className="text-xs text-gray-main font-semibold font-manrope">
+                      Asset Ticker
+                    </th>
+                    <th className="text-xs text-gray-main font-semibold font-manrope">
+                      Balance
+                    </th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody className="w-full flex flex-col items-center justify-start gap-3 min-w-[630px] font-manrope">
+                  {elements.map((element: any, index: number) => (
+                    <tr
+                      key={index}
+                      className="w-full grid grid-cols-[.5fr,1fr,1fr,1fr] place-items-start"
+                    >
+                      <td className="text-black text-xs font-semibold">
+                        {element.no}
+                      </td>
+                      <td className="w-full flex items-center justify-start gap-2 text-black text-xs font-[700]">
+                        <div className="relative h-[23px] w-[23px] rounded-full">
+                          <Image
+                            src={element.logo}
+                            className="w-full h-full object-cover rounded-full"
+                            alt=""
+                            fill
+                          />
+                        </div>
+                        {element.ticketer}
+                      </td>
+                      <td className="text-sm text-black font-semibold">
+                        {element.balance}
+                      </td>
+                      <td className="w-full flex items-center justify-end">
+                        <button className="w-[60px] h-[24px] flex items-center justify-center text-gray-800 text-[10px] font-semibold rounded border">
+                          Sell
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
               </div>
-            </div>
-          </Table>
-        </div>
+            </MantineTable>
+          </div>
+        )}
       </div>
     </div>
   );
