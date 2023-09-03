@@ -6,7 +6,7 @@ import Image from "next/image";
 const WalletCard = () => {
   return (
     <Card
-      shadow="sm"
+      shadow="lg"
       padding="xl"
       radius="lg"
       className="bg-brand-secondary w-full overflow-hidden"

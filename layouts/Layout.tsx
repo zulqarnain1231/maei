@@ -2,10 +2,9 @@ import React from "react";
 import { useRouter } from "next/router";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
-import { AppShell, Navbar, Header, MediaQuery } from "@mantine/core";
-import Image from "next/image";
-import SideBar from "./DashboardSideBar";
+import { Avatar } from "@mantine/core";
 import DashboardSideBar from "./DashboardSideBar";
+import { BsChevronDown } from "react-icons/bs";
 
 interface Props {
   children?: React.ReactNode;
@@ -26,7 +25,31 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
         `}
         >
           <DashboardSideBar />
-          <main className="w-full h-[calc(100vh-80px)] md:h-screen overflow-auto">
+          <main className="w-full h-full flex flex-col items-center justify-start gap-4 md:h-screen overflow-auto bg-gray-100/30 font-manrope md:mt-0 mt-20">
+            <div className="w-full flex sm:flex-row flex-col sm:gap-0 gap-2 sm:items-center items-start sm:justify-between justify-start md:px-10 px-4 py-4">
+              <div className="flex flex-col items-start justify-start gap-2">
+                <h2 className="text-2xl text-black font-bold">
+                  Welcome back, Nola!
+                </h2>
+                <p className="text-sm font-normal text-gray-main">
+                  Maei User Wallet
+                </p>
+              </div>
+              <div className="flex items-center justify-start gap-3">
+                <p className="text-base text-black font-medium">David Gilmor</p>
+                <Avatar
+                  classNames={{
+                    root: "bg-brand-secondary cursor-pointer",
+                    placeholder:
+                      "text-white font-manrope font-medium bg-brand-secondary border-none",
+                  }}
+                  radius="xl"
+                >
+                  NR
+                </Avatar>
+                <BsChevronDown className="text-[18px] cursor-pointer" />
+              </div>
+            </div>
             {children}
           </main>
         </div>

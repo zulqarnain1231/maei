@@ -3,7 +3,7 @@ import { Card } from "@mantine/core";
 const SecurityCard = () => {
   return (
     <Card
-      shadow="sm"
+      shadow="lg"
       padding="xl"
       radius="lg"
       className="bg-white w-full overflow-hidden"
