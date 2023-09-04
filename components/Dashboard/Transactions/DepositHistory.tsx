@@ -97,17 +97,17 @@ const DepositHistory = () => {
     },
   ];
   return (
-    <MantineTable title="Deposit & Withdrawal History">
+    <MantineTable title="Deposit & Withdrawal History" setting>
       <div className="w-full overflow-auto flex flex-col items-center justify-start gap-4">
         <thead className="w-full">
-          <tr className=" w-full grid sm:grid-cols-[.5fr,1fr,1fr,1fr,1fr] grid-cols-[.5fr,1fr,1fr,1fr] place-items-start">
+          <tr className=" w-full grid sm:grid-cols-[.5fr,1fr,1fr,1fr,1fr] grid-cols-[.5fr,1fr,1fr] place-items-start">
             <th className="text-xs text-gray-main font-semibold font-manrope">
               No
             </th>
             <th className="text-xs text-gray-main font-semibold font-manrope">
               Date Received
             </th>
-            <th className="text-xs text-gray-main font-semibold font-manrope">
+            <th className="text-xs sm:inline-block hidden text-gray-main font-semibold font-manrope">
               Status
             </th>
             <th className="text-xs sm:inline-block hidden text-gray-main font-semibold font-manrope">
@@ -124,7 +124,7 @@ const DepositHistory = () => {
               key={index}
               className="w-full flex flex-col items-center justify-start gap-2"
             >
-              <tr className="w-full grid sm:grid-cols-[.5fr,1fr,1fr,1fr,1fr] grid-cols-[.5fr,1fr,1fr,1fr] place-items-start">
+              <tr className="w-full grid sm:grid-cols-[.5fr,1fr,1fr,1fr,1fr] grid-cols-[.5fr,1fr,1fr] place-items-start">
                 <td className="text-black text-xs font-semibold">
                   {element.no}
                 </td>
@@ -138,7 +138,7 @@ const DepositHistory = () => {
                       : element.status == "Confirmed"
                       ? "bg-[#D4FFE6] text-[#27AE60]"
                       : "bg-[#FFDDDD] text-[#EB5757]"
-                  } text-xs flex items-center justify-center  font-semibold`}
+                  } text-xs sm:flex hidden items-center justify-center  font-semibold`}
                 >
                   {element.status}
                 </td>
