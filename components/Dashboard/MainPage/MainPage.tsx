@@ -17,7 +17,7 @@ const MainPage = () => {
   }, []);
 
   return (
-    <div className="w-full h-full bg-[url('/DashboardBg.png')] bg-no-repeat bg-cover md:px-10 px-4 py-1">
+    <div className="w-full h-full lg:h-[calc(100vh+80px)] bg-[url('/DashboardBg.png')] bg-no-repeat bg-cover md:px-10 px-4 py-1">
       <div className="w-full h-full grid lg:grid-cols-[1fr,2fr] lg:gap-4 gap-6">
         {/* left side */}
         <div className="w-full h-full flex flex-col items-center justify-start gap-6">

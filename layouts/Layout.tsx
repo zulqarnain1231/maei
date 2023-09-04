@@ -25,7 +25,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
         `}
         >
           <DashboardSideBar />
-          <main className="w-full h-full flex flex-col items-center justify-start gap-4 md:h-screen overflow-auto bg-gray-100/30 font-manrope md:mt-0 mt-20">
+          <main className="w-full h-full flex flex-col items-center justify-start gap-4 md:h-screen overflow-y-auto bg-gray-100/30 font-manrope md:mt-0 mt-20">
             <div className="w-full flex sm:flex-row flex-col sm:gap-0 gap-2 sm:items-center items-start sm:justify-between justify-start md:px-10 px-4 py-4">
               <div className="flex flex-col items-start justify-start gap-2">
                 <h2 className="text-2xl text-black font-bold">

@@ -1,10 +1,5 @@
-import React, { useEffect, useState } from "react";
-import WalletCard from "./WalletCard";
-import SecurityCard from "./SecurityCard";
-import { Table } from "@mantine/core";
-import { Select } from "@mantine/core";
-import { FiChevronDown } from "react-icons/fi";
-import Image from "next/image";
+import React from "react";
+
 import MantineTable from "@/components/Shared/MantineTable";
 const TokensExchangeTable = () => {
   const elements = [
@@ -32,19 +27,37 @@ const TokensExchangeTable = () => {
       amount: 2,
       price: "$1,890.09",
     },
+    {
+      no: 5,
+      asset: "EW1",
+      amount: 2,
+      price: "$1,890.09",
+    },
+    {
+      no: 6,
+      asset: "EW1",
+      amount: 2,
+      price: "$1,890.09",
+    },
+    {
+      no: 7,
+      asset: "EW1",
+      amount: 2,
+      price: "$1,890.09",
+    },
   ];
   return (
     <MantineTable title="Token Exchange">
       <div className="w-full overflow-auto flex flex-col items-center justify-start gap-4">
-        <thead className="w-full min-w-[630px]">
-          <tr className=" w-full grid grid-cols-[.5fr,1fr,1fr,1fr,1fr] place-items-start">
+        <thead className="w-full">
+          <tr className=" w-full grid sm:grid-cols-[.5fr,1fr,1fr,1fr,1fr] grid-cols-[.5fr,1fr,1fr,1fr] place-items-start">
             <th className="text-xs text-gray-main font-semibold font-manrope">
               No
             </th>
             <th className="text-xs text-gray-main font-semibold font-manrope">
               Asset
             </th>
-            <th className="text-xs text-gray-main font-semibold font-manrope">
+            <th className="text-xs sm:inline-block hidden text-gray-main font-semibold font-manrope">
               Amount
             </th>
             <th className="text-xs text-gray-main font-semibold font-manrope">
@@ -53,28 +66,40 @@ const TokensExchangeTable = () => {
             <th></th>
           </tr>
         </thead>
-        <tbody className="w-full flex flex-col items-center justify-start gap-3 min-w-[630px] font-manrope">
+
+        <tbody className="w-full max-h-[200px] overflow-auto flex flex-col items-center justify-start gap-3 font-manrope ThinScrollbar">
           {elements.map((element: any, index: number) => (
-            <tr
+            <div
               key={index}
-              className="w-full grid grid-cols-[.5fr,1fr,1fr,1fr,1fr] place-items-start"
+              className="w-full flex flex-col items-center justify-start gap-2"
             >
-              <td className="text-black text-xs font-semibold">{element.no}</td>
-              <td className="w-full flex items-center justify-start gap-2 text-black text-xs font-[700]">
-                {element.asset}
-              </td>
-              <td className="text-sm text-black font-semibold">
-                {element.amount}
-              </td>
-              <td className="text-sm text-black font-semibold">
-                {element.price}
-              </td>
-              <td className="w-full flex items-center justify-end">
-                <button className="w-[60px] h-[24px] flex items-center justify-center text-white text-[10px] font-semibold rounded bg-black">
-                  Buy
-                </button>
-              </td>
-            </tr>
+              <tr className="w-full grid sm:grid-cols-[.5fr,1fr,1fr,1fr,1fr] grid-cols-[.5fr,1fr,1fr,1fr] place-items-start">
+                <td className="text-black text-xs font-semibold">
+                  {element.no}
+                </td>
+                <td className="w-full flex items-center justify-start gap-2 text-black text-xs font-[700]">
+                  {element.asset}
+                </td>
+                <td className="text-sm sm:inline-block hidden text-black font-semibold">
+                  {element.amount}
+                </td>
+                <td className="text-sm text-black font-semibold">
+                  {element.price}
+                </td>
+                <td className="w-full flex items-center justify-end">
+                  <button className="w-[60px] h-[24px] flex items-center justify-center text-white text-[10px] font-semibold rounded bg-black">
+                    Buy
+                  </button>
+                </td>
+              </tr>
+              {index < elements.length - 1 && (
+                <div className="w-full flex flex-shrink-0 items-center justify-start">
+                  <span className="h-[6px] w-[6px] rounded-full bg-gray-main/50"></span>
+                  <span className="w-full h-[1px] bg-gray-main/50"></span>
+                  <span className="h-[6px] w-[6px] rounded-full bg-gray-main/50"></span>
+                </div>
+              )}
+            </div>
           ))}
         </tbody>
       </div>

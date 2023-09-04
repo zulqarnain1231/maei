@@ -11,7 +11,7 @@ const MantineTable: React.FC<Props> = ({ title, children }) => {
     <Table
       horizontalSpacing="sm"
       verticalSpacing="sm"
-      className="w-full shadow-xl rounded-xl font-manrope bg-white "
+      className="w-full shadow-xl rounded-xl font-manrope bg-white !overflow-auto "
     >
       <div className="w-full flex flex-col items-center justify-start gap-4 p-8 overflow-auto">
         <div className="w-full flex items-center justify-between">
