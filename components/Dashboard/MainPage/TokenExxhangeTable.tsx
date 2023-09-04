@@ -1,6 +1,7 @@
 import React from "react";
 
 import MantineTable from "@/components/Shared/MantineTable";
+import Divider from "@/components/Shared/Divider";
 const TokensExchangeTable = () => {
   const elements = [
     {
@@ -92,13 +93,7 @@ const TokensExchangeTable = () => {
                   </button>
                 </td>
               </tr>
-              {index < elements.length - 1 && (
-                <div className="w-full flex flex-shrink-0 items-center justify-start">
-                  <span className="h-[6px] w-[6px] rounded-full bg-gray-main/50"></span>
-                  <span className="w-full h-[1px] bg-gray-main/50"></span>
-                  <span className="h-[6px] w-[6px] rounded-full bg-gray-main/50"></span>
-                </div>
-              )}
+              {index < elements.length - 1 && <Divider />}
             </div>
           ))}
         </tbody>
