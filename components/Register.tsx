@@ -3,18 +3,20 @@ import Image from "next/image";
 import { Input, PasswordInput } from "@mantine/core";
 import { HiOutlineMail } from "react-icons/hi";
 import { MdOutlineLock } from "react-icons/md";
-
+import { useRouter } from "next/router";
 const Register = () => {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
   });
+  const router = useRouter();
   const handleInputs = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputs({ ...inputs, [name]: value });
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    router.push("/accountcreated");
   };
   return (
     <div className="w-full min-h-screen flex flex-col items-start justify-start gap-16 bg-[url('/Register.png')] bg-cover bg-no-repeat py-5">
