@@ -59,8 +59,8 @@ const DashboardSideBar = () => {
                   href={item.Route}
                   className={`w-[170px] px-3 py-4 flex items-center justify-start gap-2 group  text-sm font-medium rounded-xl ${
                     item.Route === Router.pathname
-                      ? "text-white bg-gradient-to-r from-brand-tartary to-brand-secondary"
-                      : " hover:text-white hover:bg-gradient-to-r from-brand-tartary to-brand-secondary"
+                      ? "text-white bg-gradient-to-b from-brand-main to-brand-secondary"
+                      : " hover:text-white hover:bg-gradient-to-b from-brand-main to-brand-secondary"
                   }`}
                 >
                   {item.icon}
@@ -75,8 +75,8 @@ const DashboardSideBar = () => {
             href={"#"}
             className={`w-[170px] px-3 py-4 flex items-center justify-start gap-2 group  text-sm font-medium rounded-xl ${
               "#" === Router.pathname
-                ? "text-white bg-gradient-to-r from-brand-tartary to-brand-secondary"
-                : " hover:text-white hover:bg-gradient-to-r from-brand-tartary to-brand-secondary"
+                ? "text-white bg-gradient-to-b from-brand-main to-brand-secondary"
+                : " hover:text-white hover:bg-gradient-to-b from-brand-main to-brand-secondary"
             }`}
           >
             <IoSettingsOutline className="text-[24px]" />
@@ -86,8 +86,8 @@ const DashboardSideBar = () => {
             href={"#"}
             className={`w-[170px] px-3 py-4 flex items-center justify-start gap-2 group  text-sm font-medium rounded-xl ${
               "#" === Router.pathname
-                ? "text-white bg-gradient-to-r from-brand-tartary to-brand-secondary"
-                : " hover:text-white hover:bg-gradient-to-r from-brand-tartary to-brand-secondary"
+                ? "text-white bg-gradient-to-b from-brand-main to-brand-secondary"
+                : " hover:text-white hover:bg-gradient-to-b from-brand-main to-brand-secondary"
             }`}
           >
             <MdLogout className="text-[24px]" />
@@ -131,8 +131,8 @@ const DashboardSideBar = () => {
                     href={item.Route}
                     className={`w-full px-3 py-4 flex items-center justify-start gap-2 group  text-sm font-medium rounded-xl ${
                       item.Route === Router.pathname
-                        ? "text-white bg-gradient-to-r from-brand-tartary to-brand-secondary"
-                        : " hover:text-white hover:bg-gradient-to-r from-brand-tartary to-brand-secondary"
+                        ? "text-white bg-gradient-to-b from-brand-main to-brand-secondary"
+                        : " hover:text-white hover:bg-gradient-to-b from-brand-main to-brand-secondary"
                     }`}
                   >
                     {item.icon}
@@ -147,8 +147,8 @@ const DashboardSideBar = () => {
                 onClick={toggleDrawer}
                 className={`w-full px-3 py-4 flex items-center justify-start gap-2 group  text-sm font-medium rounded-xl ${
                   "#" === Router.pathname
-                    ? "text-white bg-gradient-to-r from-brand-tartary to-brand-secondary"
-                    : " hover:text-white hover:bg-gradient-to-r from-brand-tartary to-brand-secondary"
+                    ? "text-white bg-gradient-to-b from-brand-main to-brand-secondary"
+                    : " hover:text-white hover:bg-gradient-to-b from-brand-main to-brand-secondary"
                 }`}
               >
                 <IoSettingsOutline className="text-[24px]" />

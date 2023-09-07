@@ -39,9 +39,9 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
                 <p className="text-base text-black font-medium">David Gilmor</p>
                 <Avatar
                   classNames={{
-                    root: "bg-brand-secondary cursor-pointer",
+                    root: "bg-blue-600 cursor-pointer",
                     placeholder:
-                      "text-white font-manrope font-medium bg-brand-secondary border-none",
+                      "text-white font-manrope font-medium bg-blue-600 border-none",
                   }}
                   radius="xl"
                 >

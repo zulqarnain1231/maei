@@ -9,7 +9,7 @@ const WalletCard = () => {
       shadow="lg"
       padding="xl"
       radius="lg"
-      className="bg-brand-secondary w-full overflow-hidden"
+      className="bg-gradient-to-b from-brand-main to-brand-secondary w-full overflow-hidden"
     >
       <div className="w-full flex flex-col items-start justify-start gap-12 relative">
         <div className="absolute h-[190px] w-[170px] -top-20 -left-10">

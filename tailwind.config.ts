@@ -11,8 +11,8 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          main: "#2436D8 ",
-          secondary: "#1E30CE",
+          main: "#000",
+          secondary: "#383838",
           tartary: "#3447F2 ",
         },
         gray: {
